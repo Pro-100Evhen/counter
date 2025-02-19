@@ -5,7 +5,7 @@ function UserData() {
    const { formData } = useContext(UserContext);
 
    return (
-      <div>
+      <div className="data-container">
          <h2>Введені дані</h2>
          <ul>
             <li>

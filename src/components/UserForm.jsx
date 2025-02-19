@@ -13,7 +13,7 @@ function UserForm() {
    };
 
    return (
-      <div>
+      <div className="form-container">
          <h2>Форма користувача</h2>
          <form>
             <input

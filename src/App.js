@@ -7,7 +7,7 @@ import { UserProvider } from "./context/UserContext";
 function App() {
    return (
       <UserProvider>
-         <div className="App">
+         <div className="container">
             <Title />
             <UserForm />
             <UserData />
