@@ -1,52 +1,49 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-function UserForm() {
-   const { formData, setFormData } = useContext(UserContext);
-
-   const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prev) => ({
-         ...prev,
-         [name]: value,
-      }));
-   };
+export default function UserForm() {
+   const {
+      name,
+      setName,
+      surname,
+      setSurname,
+      groupCode,
+      setGroupCode,
+      email,
+      setEmail,
+   } = useContext(UserContext);
 
    return (
       <div className="form-container">
-         <h2>Форма користувача</h2>
-         <form>
-            <input
-               type="text"
-               name="name"
-               placeholder="Ім'я"
-               value={formData.name}
-               onChange={handleChange}
-            />
-            <input
-               type="text"
-               name="surname"
-               placeholder="Прізвище"
-               value={formData.surname}
-               onChange={handleChange}
-            />
-            <input
-               type="text"
-               name="groupCode"
-               placeholder="Код групи"
-               value={formData.groupCode}
-               onChange={handleChange}
-            />
-            <input
-               type="email"
-               name="email"
-               placeholder="Електронна пошта"
-               value={formData.email}
-               onChange={handleChange}
-            />
-         </form>
+         <h2>Введіть дані</h2>
+         <input
+            type="text"
+            name="name"
+            placeholder="Ім'я"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+         />
+         <input
+            type="text"
+            name="surname"
+            placeholder="Прізвище"
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
+         />
+         <input
+            type="text"
+            name="groupCode"
+            placeholder="Код групи"
+            value={groupCode}
+            onChange={(e) => setGroupCode(e.target.value)}
+         />
+         <input
+            type="email"
+            name="email"
+            placeholder="Електронна пошта"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+         />
       </div>
    );
 }
-
-export default UserForm;

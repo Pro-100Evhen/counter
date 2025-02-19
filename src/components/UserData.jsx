@@ -1,28 +1,26 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-function UserData() {
-   const { formData } = useContext(UserContext);
+export default function UserData() {
+   const { name, surname, groupCode, email } = useContext(UserContext);
 
    return (
       <div className="data-container">
-         <h2>Введені дані</h2>
+         <h2>Введені дані:</h2>
          <ul>
             <li>
-               <strong>Ім'я:</strong> {formData.name}
+               <strong>Ім'я:</strong> {name}
             </li>
             <li>
-               <strong>Прізвище:</strong> {formData.surname}
+               <strong>Прізвище:</strong> {surname}
             </li>
             <li>
-               <strong>Код групи:</strong> {formData.groupCode}
+               <strong>Код групи:</strong> {groupCode}
             </li>
             <li>
-               <strong>Email:</strong> {formData.email}
+               <strong>Email:</strong> {email}
             </li>
          </ul>
       </div>
    );
 }
-
-export default UserData;
