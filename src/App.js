@@ -1,18 +1,13 @@
 import "./App.css";
+import Main from "./components/UserFormW";
 import Title from "./components/Title";
-import UserData from "./components/UserData";
-import UserForm from "./components/UserForm";
-import { UserProvider } from "./context/UserContext";
 
 function App() {
    return (
-      <UserProvider>
-         <div className="container">
-            <Title />
-            <UserForm />
-            <UserData />
-         </div>
-      </UserProvider>
+      <div className="container">
+         <Title />
+         <Main />
+      </div>
    );
 }
 
